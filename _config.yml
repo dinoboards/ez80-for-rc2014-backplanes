@@ -3,7 +3,7 @@ plugins:
   - jekyll-remote-theme
 relative_links:
   enabled: true
-  collections: true
+  collections: false
 include:
   - CONTRIBUTING.md
   - README.md
