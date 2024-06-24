@@ -26,7 +26,7 @@ title:  "eZ80 never need stop"
 <p>In this design, the eZ80&nbsp;is isolated from the main buses via 74HCT245 buffer chips.&nbsp; Enough for all its address, control and data signals.&nbsp; The buffer chips are in 'disabled' state, when the Z80 is accessing the buses.&nbsp;&nbsp;</p>
 
 
-<figure><img style="width: 327px; height: 268.99px;" width="327" height="268.99" class="lazy" src="9482271717198311859.png"></figure>
+<figure style="text-align: center"><img style="width: 327px; height: 268.99px;" width="327" height="268.99" src="{{ site.baseurl }}/assets/images/buffer-schematic-clip.png"></figure>
 
 
 <p>When its time for the eZ80&nbsp;to access the bus, the Z80's BUSREQ signal is 'activated'.&nbsp; This will cause the Z80 to HALT, and release the bus.&nbsp; Once its released the bus, the Z80's BUSACK signal is activated.&nbsp; By connecting the BUSACK signal to the 74HCT245 buffer chip's enable signal (EZ_ONBUS), the eZ80&nbsp;will only be able to access the bus, when the Z80 has fully released it.<br></p>
