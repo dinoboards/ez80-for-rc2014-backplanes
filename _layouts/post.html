@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<h1 style="text-align:center">{{ page.title }}</h1>
+<h4 style="text-align:center; margin-bottom: 0px;"><a href="{{ site.baseurl }}">{{ site.title }}</a></h4>
+<p style="text-align: center; font-size: x-small; margin-top: 0;">{{ site.description }}</p>
+<p style="text-align: center">{{ page.date | date_to_string }}</p>
+
+<hr/>
+
+{{ content }}
+
+
+<div style="padding-top: 4em; padding-bottom: 4em">
+{% if page.previous %}
+<div style="display: flex; float: left; width: 50%; text-align: left;">
+  <div style="display:block; text-align: left;">
+    <span >Previous</span>
+    <h3 style="margin-bottom: 0; letter-spacing: 0px; font-weight: 400; word-break: break-word;">
+      <a rel="prev" href="{{ site.baseurl }}{{ page.previous.url }}">{{ page.previous.title }}</a>
+    </h3>
+  </div>
+</div>
+{% endif %}
+
+{% if page.next %}
+<div style="flex-direction: row-reverse; text-align: right; float: right; display: flex; width: 50%;">
+  <div style="display:block; text-align: right;">
+    <span>Next</span>
+    <h3 style="margin-bottom: 0; letter-spacing: 0px; font-weight: 400; word-break: break-word;">
+      <a rel="next" href="{{ site.baseurl }}{{ page.next.url }}">{{ page.next.title }}</a>
+    </h3>
+  </div>
+</div>
+{% endif %}
+</div>
+<div style="clear:both"></div>
+
+<hr/>
+
+{% include comments.html %}
+
