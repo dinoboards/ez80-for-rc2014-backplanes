@@ -78,16 +78,15 @@ I have journaled some of my thinking around the design and learnings in the proj
 
 <script>
 function showAllPosts() {
-  var allPostsSection = document.getElementById("allPosts");
-  if (allPostsSection.style.display === "none") {
-    allPostsSection.style.display = "block";
-  } else {
-    allPostsSection.style.display = "none";
-  }
+  const allPostsSection = document.getElementById("allPosts");
+  allPostsSection.style.display = "block";
+
+  const allPostsLink = document.getElementById("allPostLink");
+  allPostsLink.style.display = "none";
 }
 </script>
 
-<a href="javascript:void(0)" onclick="showAllPosts()">Show Older Journal Posts...</a>
+<a id="allPostLink" href="javascript:void(0)" onclick="showAllPosts()">Show Older Journal Posts...</a>
 
 <div id="allPosts" style="display:none">
 
