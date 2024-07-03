@@ -1,6 +1,6 @@
 
-*    comments
-*    likes?
+* ./ comments
+* ./ likes?
 * ./ rss feed
 * ./ google analytics
 *    styling
