@@ -1,7 +1,7 @@
 
-* comments
-* likes?
-* rss feed
-* google analytics
-* styling
+*    comments
+*    likes?
+* ./ rss feed
+*    google analytics
+*    styling
 
