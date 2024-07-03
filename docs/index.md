@@ -52,7 +52,7 @@ The eZ80 Zilog CPU is an updated version of Z80 CPU. It comes in a few variation
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
