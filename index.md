@@ -1,12 +1,5 @@
 ---
-layout: default
-images:
-  - image_path: cpu-module-profile-v1.jpg
-    title: eZ80 CPU profile (v1)
-  - image_path: ez80-installed-backplane-leds.png
-    title: eZ80 Module installed into RC2014 Pro backplane (v1)
-  - image_path: cpu-module-installed-v1.jpg
-    title: eZ80 CPU installed into module (v1)
+layout: home
 ---
 
 
@@ -24,7 +17,7 @@ This site is a mirror on my hackaday account at: <a href="https://hackaday.io/pr
 
 <h2><strong>Design Details</strong></h2>
 
-<p>I have journaled some of my thinking around the design and learnings in the project log.&nbsp; If this is the your first viewing of the project, you may want to read through these journal entries sorted by 'Oldest' first. Click here:&nbsp;<a href="https://hackaday.io/project/196330/logs?sort=oldest">Journal Log</a></p>
+I have journaled some of my thinking around the design and learnings in the project log.&nbsp; If this is the your first viewing of the project, you may want to read through these journal entries sorted by 'Oldest' first. Click here: [Journal Log](./all-journals.md)
 
 <h2><strong>Which eZ80?</strong></h2>
 
@@ -68,14 +61,44 @@ This site is a mirror on my hackaday account at: <a href="https://hackaday.io/pr
 
 ---
 
-# Journal
+# Latest Upddates
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-    </li>
+  {% for post in site.posts limit:3 %}
+  <div>
+      <h3 style="margin-bottom: 0px"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+      <div style="font-size: small">{{ post.date | date: "%Y/%m/%d" }}</div>
+      <div style="margin-bottom: -1em">{{ post.excerpt }}</div>
+      <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a>
+      <div style="padding-bottom: 2em" ></div>
+      </div>
   {% endfor %}
-</ul>
+
 
 ---
+
+<script>
+function showAllPosts() {
+  var allPostsSection = document.getElementById("allPosts");
+  if (allPostsSection.style.display === "none") {
+    allPostsSection.style.display = "block";
+  } else {
+    allPostsSection.style.display = "none";
+  }
+}
+</script>
+
+<a href="javascript:void(0)" onclick="showAllPosts()">Show Older Journal Posts...</a>
+
+<div id="allPosts" style="display:none">
+
+{% for post in site.posts offset:3 %}
+  <div>
+      <h3 style="margin-bottom: 0px"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+      <div style="font-size: small">{{ post.date | date: "%Y/%m/%d" }}</div>
+      <div style="margin-bottom: -1em">{{ post.excerpt }}</div>
+      <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a>
+      <div style="padding-bottom: 2em" ></div>
+  </div>
+
+{% endfor %}
+</div>

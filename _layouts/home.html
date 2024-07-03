@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  {% include head-custom.html %}
+  <link rel="shortcut icon" type="image/png" href="dino.png">
+  <title>{{ site.title }}</title>
+  <meta name="generator" content="Jekyll v3.9.5">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta name="author" content="Dean Netherton">
+  <meta property="og:locale" content="en_AU">
+  <meta name="description" content="{{ site.description }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <link rel="canonical" href="https://dinoboards.github.io/ez80-for-rc2014-backplanes/">
+  <meta property="og:url" content="https://dinoboards.github.io/ez80-for-rc2014-backplanes/">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta property="twitter:title" content="{{ site.title }}">
+</head>
+
+<style>
+  #main-image {
+    margin: auto;
+    max-width: 350px;
+    cursor: pointer;
+    color: #FFFF00;
+    text-decoration: none;
+    transition: all .15s ease-in;
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    margin-bottom: 7px;
+    display: block;
+    background-position: center center;
+    text-align: center;
+    position: relative;
+  }
+
+  .left-container {
+    width: 30%;
+    float: left;
+    margin-right: 1.5%;
+  }
+
+  .right-container {
+    margin-top: 0px;
+    width: 65%;
+    float: right;
+    margin-right: 0;
+  }
+
+  @media only screen and (max-width: 900px) {
+
+    .left-container,
+    .right-container {
+      width: 90%;
+      float: none
+    }
+
+    #main-image {
+      width: 85%
+    }
+  }
+
+  .thumbs-holder {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+  }
+
+
+  .thumbs-holder:before,
+  .thumbs-holder:after {
+    display: table;
+    content: "";
+  }
+
+  .thumbs-holder {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .thumbs-holder .thumb {
+    float: left;
+  }
+
+  .image-holder {
+    position: relative;
+    width: 100%;
+    height: 353px;
+    background-size: cover;
+    margin-bottom: 7px;
+    display: block;
+    background-position: center center;
+    text-align: center;
+  }
+
+  .thumb,
+  .image-holder {
+    position: relative;
+  }
+
+  .thumb {
+    display: inline-block;
+    width: 32%;
+    height: 100px;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .thumb-last {
+    margin-right: 0;
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1Q640HFK84"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-1Q640HFK84');
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const mainImage = document.querySelector('#main-image');
+    const imageHolders = document.querySelectorAll('.image-holder');
+
+    imageHolders.forEach(holder => {
+      holder.addEventListener('mouseenter', function () {
+        const newImage = this.getAttribute('data-image');
+        const newHref = this.getAttribute('href');
+        const newTitle = this.getAttribute('title');
+
+        mainImage.style.backgroundImage = `url(${newImage})`;
+        mainImage.href = newHref;
+        mainImage.title = newTitle;
+      });
+
+    });
+  });
+
+</script>
+
+<body>
+  <div>
+    <div class="headline"
+      style="font-size: 16px; color: #fff; line-height: 1.4; font-weight: 300; display: block; padding: 0; padding-top: 2.5em; text-align: center; background-size: cover; background-position: center center; position: relative; background-image: url({{ site.baseurl }}/assets/images/header-image.jpg);">
+      <div class="headline-image-overlay"
+        style="font-size: 16px; color: #fff; line-height: 1.4; font-weight: 300; text-align: center; box-sizing: inherit; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: #000; opacity: 0.4; z-index: 1;">
+      </div>
+
+      <div style="margin-top: 0px; margin-bottom: 0px; position: relative; z-index: 10;">
+        <h1 style="color: #FFFFFF; text-align: center; margin-bottom: 0px">{{ site.title }}</h1>
+        <h3 style="color: #FFFFFF; text-align: center">{{ site.description }}</h2>
+          <div style="margin-bottom: 2em; padding-bottom: 1em;">
+            <a href="{{ site.baseurl }}/" style="color: white">Project Home</a>
+            <a href="{{ site.baseurl }}/feed.xml" target="_blank" style="color: white">Atom Feed</a>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left-container">
+      <a id="main-image" href="{{ site.baseurl }}/assets/images/{{ site.data.gallery[0].path }}"
+        data-image="{{ site.baseurl }}/assets/images/{{ site.data.gallery[0].path }}"
+        style="background-image: url({{ site.baseurl }}/assets/images/{{ site.data.gallery[0].path }})"
+        title="{{ site.data.gallery[0].title }}"></a>
+
+
+      <div class="thumbs-holder">
+        <a href="{{ site.baseurl }}/assets/images/{{ site.data.gallery[0].path }}" class="image-holder thumb lazy"
+          data-image="{{ site.baseurl }}/assets/images/{{ site.data.gallery[0].path }}"
+          style="background-image: url({{ site.baseurl }}/assets/images/{{ site.data.gallery[0].path }});"
+          title="{{ site.data.gallery[0].title }}"></a>
+
+        <a href="{{ site.baseurl }}/assets/images/{{ site.data.gallery[1].path }}" class="image-holder thumb lazy"
+          data-image="{{ site.baseurl }}/assets/images/{{ site.data.gallery[1].path }}"
+          style="background-image: url({{ site.baseurl }}/assets/images/{{ site.data.gallery[1].path }});"
+          title="{{ site.data.gallery[1].title }}"></a>
+
+        <a href="{{ site.baseurl }}/assets/images/{{ site.data.gallery[2].path }}"
+          class="image-holder thumb thumb-last lazy"
+          data-image="{{ site.baseurl }}/assets/images/{{ site.data.gallery[2].path }}"
+          style="background-image: url({{ site.baseurl }}/assets/images/{{ site.data.gallery[2].path }});"
+          title="{{ site.data.gallery[2].title }}"></a>
+      </div>
+
+
+      <div style="clear:both; padding-top: 1em">
+        <hr/>
+        <h3>Files</h3>
+        <ul>
+          {% for file in site.data.files %}
+            <li><a target="_blank" href="{{ site.baseurl }}/assets/files/{{ file.path }}">{{ file.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <section class="right-container">
+      <div></div>
+      {{ content }}
+    </section>
+  </div>
+</body>
+
+</html>
