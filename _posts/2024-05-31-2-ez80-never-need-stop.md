@@ -66,5 +66,3 @@ title:  "eZ80 never need stop"
 
 
 <ul><li>The eZ80&nbsp;could be 'interrupted' by this GPIO/BUSACK signal or it may simply be polling this pin.</li><li>The eZ80&nbsp;will change it GPIO pin mapped to the INT line from output to input.</li><li>As the eZ80&nbsp;now has access to the buses, it can, when it want to give control back to the Z80, write to the 74HC74 flip-flop to release the BUSREQ signal.</li></ul>
-
-{% include comments.html %}

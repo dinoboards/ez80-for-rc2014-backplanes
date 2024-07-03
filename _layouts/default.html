@@ -8,7 +8,19 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
     <link rel="shortcut icon" type="image/png" href="dino.png">
-{% seo %}
+    <title>{{ site.title }}</title>
+    <meta name="generator" content="Jekyll v3.9.5">
+    <meta property="og:title" content="{{ site.title }}">
+    <meta name="author" content="Dean Netherton">
+    <meta property="og:locale" content="en_AU">
+    <meta name="description" content="{{ site.description }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <link rel="canonical" href="https://dinoboards.github.io/ez80-for-rc2014-backplanes/">
+    <meta property="og:url" content="https://dinoboards.github.io/ez80-for-rc2014-backplanes/">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta property="twitter:title" content="{{ site.title }}">
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -21,8 +33,21 @@
   </script>
 
   <body>
+    <div>
+      <div class="headline" style="font-size: 16px; color: #fff; line-height: 1.4; font-weight: 300; display: block; padding: 0; padding-top: 2.5em; text-align: center; background-size: cover; background-position: center center; position: relative; background-image: url({{ site.baseurl }}/assets/images/header-image.jpg);">
+        <div class="headline-image-overlay" style="font-size: 16px; color: #fff; line-height: 1.4; font-weight: 300; text-align: center; box-sizing: inherit; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: #000; opacity: 0.4; z-index: 1;">
+        </div>
+
+        <div style="margin-top: 0px; margin-bottom: 0px; position: relative; z-index: 10;">
+          <h1 style="color: #FFFFFF; text-align: center; margin-bottom: 0px">{{ site.title }}</h1>
+          <h3 style="color: #FFFFFF; text-align: center; padding-bottom: 2em">{{ site.description }}</h2>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
       <section id="main_content">
+        <div></div>
         {{ content }}
       </section>
     </div>

@@ -1,8 +1,4 @@
 
-# eZ80 CPU for RC2014 and other backplanes
-
-## An eZ80 CPU Module that works within the RC2014 ecosystem and other similar backplanes
-
 The goal of this project is to design and build a module for the RC2014™/RCBus and my Yelllow MSX Series, that can operate as a complete CPU module and drive the various available modules.
 
 The eZ80 Zilog CPU is an updated version of Z80 CPU. It comes in a few variations with many on chip facilities in addition to the basic CPU, such as flash ROM, RAM, GPIO and other IO services. See the Wikipedia page for basic overview of the CPU (https://en.wikipedia.org/wiki/Zilog_eZ80)
