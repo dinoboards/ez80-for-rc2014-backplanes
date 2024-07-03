@@ -1,8 +1,20 @@
+---
+layout: default
+images:
+  - image_path: cpu-module-profile-v1.jpg
+    title: eZ80 CPU profile (v1)
+  - image_path: ez80-installed-backplane-leds.png
+    title: eZ80 Module installed into RC2014 Pro backplane (v1)
+  - image_path: cpu-module-installed-v1.jpg
+    title: eZ80 CPU installed into module (v1)
+---
+
 
 The goal of this project is to design and build a module for the RC2014™/RCBus and my Yelllow MSX Series, that can operate as a complete CPU module and drive the various available modules.
 
-The eZ80 Zilog CPU is an updated version of Z80 CPU. It comes in a few variations with many on chip facilities in addition to the basic CPU, such as flash ROM, RAM, GPIO and other IO services. See the Wikipedia page for basic overview of the CPU (https://en.wikipedia.org/wiki/Zilog_eZ80)
+The eZ80 Zilog CPU is an updated version of Z80 CPU. It comes in a few variations with many on chip facilities in addition to the basic CPU, such as flash ROM, RAM, GPIO and other IO services. See the Wikipedia page for basic overview of the CPU (<a href="https://en.wikipedia.org/wiki/Zilog_eZ80">https://en.wikipedia.org/wiki/Zilog_eZ80</a>)
 
+This site is a mirror on my hackaday account at: <a href="https://hackaday.io/project/196330-ez80-cpu-for-rc2014-and-other-backplanes">https://hackaday.io/project/196330-ez80-cpu-for-rc2014-and-other-backplanes</a>
 
 ---
 
@@ -32,7 +44,22 @@ The eZ80 Zilog CPU is an updated version of Z80 CPU. It comes in a few variation
 
 <p>Of course, this is not the first hobby, DIY, retro solution using the eZ80 CPU.&nbsp; There are a few out there that inspired me.</p>
 
-<ul><li><a href="https://github.com/TheByteAttic/AgonLight">Agon</a>&nbsp;- a cool little single board retro machine, with large following and lots of open source material available.</li><li><a href="https://drive.google.com/file/d/1xoRq0Suo46uGw3tNLPOU8g6G4coTdOsZ/view">eZ-Tiny</a>&nbsp;- it might be small, but it is still very capable.</li><li>The&nbsp;&nbsp;<a href="https://hackaday.com/2020/02/23/a-z80-computer-at-the-next-level/">Z20X computer</a>&nbsp;- this seems to be abandon now and the original website is gone - but it gave me the inspiration for a CPU breakout module.&nbsp;</li><li><a href="https://rc2014.co.uk/">RC2014</a>- where it all began for me.</li><li>And my own <a href="https://github.com/vipoo/yellow-msx-series-for-rc2014">Yellow MSX project</a>.</li></ul>
+<ul>
+  <li>
+    <a href="https://github.com/TheByteAttic/AgonLight">Agon</a> - a cool little single board retro machine, with large following and lots of open source material available.
+  </li>
+
+  <li>
+    <a href="https://drive.google.com/file/d/1xoRq0Suo46uGw3tNLPOU8g6G4coTdOsZ/view">eZ-Tiny</a> - it might be small, but it is still very capable.
+  </li>
+
+  <li>The <a href="https://hackaday.com/2020/02/23/a-z80-computer-at-the-next-level/">Z20X computer</a> - this seems to be abandon now and the original website is gone - but it gave me the inspiration for a CPU breakout module.
+  </li>
+
+  <li><a href="https://rc2014.co.uk/">RC2014</a> - where it all began for me.</li>
+
+  <li>And my own <a href="https://github.com/vipoo/yellow-msx-series-for-rc2014">Yellow MSX project</a>.</li>
+</ul>
 
 
 <p>Below is a 10 second demo of the first operating prototype, driving the RC2014 Digital IO module.&nbsp; It just flashes the LEDS, so nothing very impressive - just confirms that the eZ80 is able to do I/O operations to another module.&nbsp; Lots of updates and software required to enable full operation.&nbsp; Eg: running CP/M, Basic, and eventually getting it to work in my Yellow MSX configuration.</p>
@@ -42,8 +69,6 @@ The eZ80 Zilog CPU is an updated version of Z80 CPU. It comes in a few variation
 ---
 
 # Journal
-
-<a class="btn btn-rss" href="{{ site.baseurl }}/feed.xml" target="_blank">RSS</a>
 
 <ul>
   {% for post in site.posts %}
