@@ -47,6 +47,8 @@ The eZ80 Zilog CPU is an updated version of Z80 CPU. It comes in a few variation
 
 # Journal
 
+<a class="btn btn-rss" href="{{ site.baseurl }}/feed.xml" target="_blank">RSS</a>
+
 <ul>
   {% for post in site.posts %}
     <li>

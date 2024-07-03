@@ -1,6 +1,10 @@
 remote_theme: pages-themes/hacker@v0.2.0
 plugins:
   - jekyll-remote-theme
+  - jekyll-feed
+title: eZ80 for RC2014 and RCBUS backplanes
+description: A project journal tracking the design and development of the eZ80 module for RC2014 and RXBUS backplanes.
+author: Dean Netherton
 relative_links:
   enabled: true
   collections: false
