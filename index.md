@@ -47,12 +47,10 @@ The eZ80 Zilog CPU is an updated version of Z80 CPU. It comes in a few variation
 
 # Journal
 
-[The eZ80 is more than a souped up Z80]({% post_url 2024-05-31-more-than-a-souped-up-z80 %})
-
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
