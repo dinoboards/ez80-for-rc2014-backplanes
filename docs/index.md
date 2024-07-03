@@ -42,3 +42,17 @@ The eZ80 Zilog CPU is an updated version of Z80 CPU. It comes in a few variation
 <p>Below is a 10 second demo of the first operating prototype, driving the RC2014 Digital IO module.&nbsp; It just flashes the LEDS, so nothing very impressive - just confirms that the eZ80 is able to do I/O operations to another module.&nbsp; Lots of updates and software required to enable full operation.&nbsp; Eg: running CP/M, Basic, and eventually getting it to work in my Yellow MSX configuration.</p>
 
 <div class="video-container"><iframe style="width: 500px; height: 281px;" src="//www.youtube.com/embed/s31_nAPKu_E" frameborder="0" allowfullscreen=""></iframe></div>
+
+---
+
+# Journal
+
+[The eZ80 is more than a souped up Z80]({% post_url 2024-05-31-more-than-a-souped-up-z80 %})
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
