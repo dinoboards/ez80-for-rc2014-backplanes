@@ -1,12 +1,11 @@
 # ez80-for-rc2014-backplanes
 
-## Tool chain to build locally
+Static website to track and detail the progress of the development of the eZ80 CPU module designed for RC2014™ and compatible backplanes.
 
-1. `curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash`
-2. `rbenv install list` to see available ruby versions
-3. `rbenv install 3.3.3`
-4. `rbenv global 3.3.3`
-5. `bundle install`
+This site can be view at:
 
-## to serve static site locally
-1. `bundle exec jekyll serve`
+https://dinoboards.github.io/ez80-for-rc2014-backplanes/
+
+
+> The journal posts of this website, were originally posted on my hackaday site at: https://hackaday.io/project/196330-ez80-cpu-for-rc2014-and-other-backplanes
+
