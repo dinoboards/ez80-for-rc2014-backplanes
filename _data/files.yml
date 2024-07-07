@@ -1,4 +1,6 @@
+- path: ez80-interface-v1.4.pdf
+  title: Interface Schematic (V1.4)
 - path: ez80-interface.pdf
-  title: Interface Module Schematic
+  title: Interface Schematic (V1.0)
 - path: ez80-v2.pdf
   title: CPU Module Schematic
