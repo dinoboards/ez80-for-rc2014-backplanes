@@ -61,7 +61,7 @@ I have journaled some of my thinking around the design and learnings in the proj
 
 ---
 
-# Latest Upddates
+# Latest Updates
 
   {% for post in site.posts limit:3 %}
   <div>
