@@ -11,7 +11,7 @@ My previous interface module, the module that connects the eZ80 CPU module to th
 
 Although I had already got the 512K ROM/RAM Memory Module to work - it was only just working.  The timing sequence applied by the eZ80 during I/O writes may not have been within the timing requirements of the logic chips on the ROM/RAM module - it was working for me (when specific chip types were used) - but it might not work for others, or might stop working for me as I change aspect of my kit.
 
-I was having this 'compatibility' issue, despite the fact that the eZ80 can configure its control signals to mimic an original Z80 CPU.  You can configured the chip to use 'Z80 Bus Mode', where the processor will transitions signals across specific 't-states', just as a Z80 does.  But there remained some key differences.
+I was having this 'compatibility' issue, despite the fact that the eZ80 can configure its control signals to mimic an original Z80 CPU.  You can configured the chip to use 'Z80 Bus Mode', where the processor will transition its signals across specific 't-states', just as a Z80 does.  But there remained some key differences.
 
 To understand the issue, we need to compare the timing diagrams of a Z80 CPU and the eZ80 CPU running in Z80 Bus Mode.
 
@@ -49,15 +49,15 @@ Only way I could think of doing this, was to design a logic circuit that would c
 
 I would need the logic design to:
 
-1. Wait for eZ80-WR to go low
+1. Wait for eZ80-WR to go low.
 2. Make bus-WR go low.
-3. Start a logic counter from 0 (incrementing as the CPU clock ticks)
-4. When the counter reach the desired point, make bus-WR go high
-5. when eZ80-WR goes high, restart and wait for the next low transition
+3. Start a logic counter from 0 (incrementing as the CPU clock ticks).
+4. When the counter reach the desired point, make bus-WR go high.
+5. when eZ80-WR goes high, restart and wait for the next low transition.
 
-This requires a least a counter and a flip-flop.  Given its getting a little crowded on the interface module PCB, I decided on using a single IC to achieve this function.  I am using the Atmel ATF16B8 PLD (programmable logic device) to implement a counter and flip-flops to model the timing diagram above.
+This requires a least a counter and a flip-flop.  Given its getting a little crowded on the interface module PCB, I decided on using a single IC to achieve this function.  I am using the Atmel ATF16V8C PLD (programmable logic device) to implement a counter and flip-flop to model the timing diagram above.
 
-As per the previous post, the new design has been assembled, PLD coded and programmed and the platform tested.  And now finally, the 512K ROM/RAM Memory Module is working well within specification.
+The new design has been assembled, PLD coded and programmed and the platform tested.  And now finally, the 512K ROM/RAM Memory Module is working well within specification.
 
 This enhancement should also help make other modules that might have similar timing issues work.
 
