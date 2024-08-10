@@ -11,7 +11,7 @@ This chip only accepts writes - it does not allow its internal registers to be r
 
 It transpired, that one thing I forgot to consider, was the eZ80 `WAIT` input signal.  This is a signal that the eZ80 (just like the Z80), can receive from 'slow' chips to cause the eZ80 to extend the writing (or reading) cycles.  The SN76489 module connects the `READY` output to the CPU's `WAIT` signal for just such a purpose.  The logic I implemented in the ATF16V8 PLD did not take the `WAIT` signal into account.  As such, it would deactivate the `BUS-WR` signal well before the SN76489 had time to load the data into its internal registers.
 
-I quick bodge on the current PCB and an update to the PLD code, and suddenly I hear retro 8-bit sound coming from this old sound chip.
+A quick bodge on the current PCB and an update to the PLD code, and suddenly I hear retro 8-bit sound coming from this old sound chip.
 
 > I did have to change the software a bit, to ensure the I/O is sent to the correct port still and also introduce a small delay between writes.  All this code is in my branch of the RomWBW code.
 
