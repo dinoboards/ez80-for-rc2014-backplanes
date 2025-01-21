@@ -1,0 +1,33 @@
+---
+layout: post
+title: C Compiler
+---
+
+At the moment, adding the eZ80 to your RC2014 or RCBus system, just kind of gives you a faster CPU with some fancy I/O systems (I2C, SPI, UART and some GPIO).
+
+But now that we have the flat linear SRAM memory module, the question arises as to how can we build programs that fully utilize this memory. To both run from within it and read and write data to it.
+
+We can continue to use our favourite assemblers and compilers that target CP/M, and so long as we address any external I/O devices (sound, video, etc) through the BIOS, or directly using the correct 16bit I/O address, everything should be just fine - we are just limited to that 64k limit.  Ideally, it would be much nicer if we can use a high level language (say C) that can compile code for the eZ80 processor, running in full ADL mode with full 24bit addressing, allowing for larger programs and data sets.
+
+Lets look at how we can potentially write software for the eZ80 and the extended memory module.
+
+Option 1: *(Zilog's ZDS II IDE)[https://www.zilog.com/index.php?option=com_zcm&task=sdlp]*
+This is the official compiler from Zilog.  Its a very old C compiler (C98), and not an optimising compiler. Its window only tool set. And its designed and optimised for embedded development as apposed to general application development.
+
+This tool chain is what I have used for the firmware development of the CPU.  With the integrated support for on-chip debugging, it makes development and diagnosing issues very easy.  But for general purpose application development, not so friendly.
+
+Option 2:*(z88dk)[https://z88dk.org/]*
+There is the superb *(z88dk)[https://z88dk.org/]* platform.  Its a well supported and capable platform.  It does have some support for eZ80 CPU and also experimental Clang support.  It have a very large set of libraries, including various math libraries, that make this a very robust and capable toolchain.  But it does lack full support for the eZ80 -- it does not support the 24bit registers and nor 24bit linear addressing.
+
+Option 3: *LLVM Clang compiler*
+Then there is the *LLVM Clang compiler* that's been patched to target the eZ80 CPU.  With full support for 24bit registers and addressing.  This compiler, a core part of the *(CE C/C++ Toolchain)[https://ce-programming.github.io/toolchain/]*, and is the basis for the Agon's *(AgDev)[https://github.com/pcawte/AgDev]* toolchain.
+
+For building the firmware to enable the eZ80 for RC to work in the RCBus/RC2014 eco-system, I had used Zilog's ZDS IDE.  With its support for flashing and on-chip debugging over the ZDI interface - it suited my needs fine.
+
+But for CP/M application development, it just would not be all the practical.  Of course, z88dk would be find for the typical (less than) 64k applications.  With the small amount of assembly where needed.  I have built some utilities and applications specifically for the eZ80 for RC using z88dk.
+
+But if I wanted to build an application that could directly address more than 64k, and take full advantage of the eZ80 CPU, then z88dk just would not be sufficient.  The CLang compiler was the only tool that could I could conceivable use.  But the *CE* and *AgDev* toolchains would not work without a new startup runtime.  I also found the 'installation' of the *CE and AgDev* tools to be a bit confusing. (the need to copy files over cloned git repos).
+
+So I made my own version of the LLVM-Compiler and built my own specific runtime.  This runtime tuned to the memory models of the eZ80 for RC configurations.  It has support for both a standard CP/M 64k target and an 'extended' target for linear memory. I have tried to make it very easy to install and use.  It can be found at:  [https://github.com/dinoboards/ez80-clang](https://github.com/dinoboards/ez80-clang)
+
+
