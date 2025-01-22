@@ -113,3 +113,4 @@ Another idea, that I have also done some exploration with, is to try and develop
 
 <figure style="text-align: center"><img style="width: 50%; height: 50%"  src="{{ site.baseurl }}/assets/images/32-pin-dimm.jpg"></figure>
 
+
